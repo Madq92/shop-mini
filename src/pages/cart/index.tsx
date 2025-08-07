@@ -7,11 +7,11 @@ function Index() {
   Taro.useDidShow(() => {
     const pageObj = Taro.getCurrentInstance().page;
     const tabbar = Taro.getTabBar<CustomTabBar>(pageObj);
-    tabbar?.setSelected(0);
+    tabbar?.setSelected(2);
   });
   return (
     <>
-      <View>Home</View>
+      <View>Cart</View>
     </>
   );
 }
