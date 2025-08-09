@@ -25,3 +25,7 @@ declare namespace NodeJS {
     TARO_APP_ID: string
   }
 }
+
+declare const BASE_URL_PREFIX: string;
+declare const QQ_MAP_KEY: string;
+declare const QINIU_BUCKET_URL_PREFIX: string;

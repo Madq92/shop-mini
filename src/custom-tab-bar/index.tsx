@@ -6,7 +6,7 @@ import { Tabbar } from "@nutui/nutui-react-taro";
 import { Cart, Category, Home, User } from "@nutui/icons-react-taro";
 
 const tabPath = ["/pages/index/index", "/pages/category/index", "/pages/cart/index", "/pages/my/index"];
-export default class Index extends Component {
+export default class CustomTabBarComponent extends Component {
   state = {
     selected: 0,
   };

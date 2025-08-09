@@ -1,0 +1,16 @@
+page {
+  background-color: #f3f3f3;
+}
+
+.banner{
+  background: white;
+  padding: 12px;
+}
+
+.goodsList {
+  background: white;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}

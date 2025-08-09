@@ -1,12 +1,12 @@
 import { View } from "@tarojs/components";
 import "./index.scss";
 import Taro from "@tarojs/taro";
-import type CustomTabBar from "../../custom-tab-bar";
+import type CustomTabBarComponent from "../../custom-tab-bar";
 
 function Index() {
   Taro.useDidShow(() => {
     const pageObj = Taro.getCurrentInstance().page;
-    const tabbar = Taro.getTabBar<CustomTabBar>(pageObj);
+    const tabbar = Taro.getTabBar<CustomTabBarComponent>(pageObj);
     tabbar?.setSelected(3);
   });
   return (
