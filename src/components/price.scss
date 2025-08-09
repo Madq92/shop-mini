@@ -1,0 +1,19 @@
+.price {
+  color: #ff6666;
+  line-height: 1;
+  align-items: baseline;
+
+  .symbol {
+    font-size: 12px;
+    padding: 0 2px;
+  }
+
+  .decimal {
+    font-size: 16px;
+  }
+
+  .unit {
+    font-size: 12px;
+    color: #333;
+  }
+}

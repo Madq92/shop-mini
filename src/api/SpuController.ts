@@ -1,12 +1,11 @@
-
-import BaseController, { PageList, PageReq } from "./BaseController";
+import BaseController from "./BaseController";
 
 export default class SpuController extends BaseController {
   /**
    * 商品分页查询
    */
-  static page(req: SpuQueryReq) {
-    return super.GET<PageList<SpuDTO>>("/mini/spu", req);
+  static list() {
+    return super.GET<SpuDTO[]>("/mini/spu");
   }
 
   /**
@@ -16,11 +15,6 @@ export default class SpuController extends BaseController {
     return super.GET<SpuDTO>(`/mini/spu/${spuId}`);
   }
 }
-
-export type SpuQueryReq = PageReq & {
-  name?: string;
-  status?: string;
-};
 
 export enum SpuTypeEnum {
   SINGLE = "SINGLE",

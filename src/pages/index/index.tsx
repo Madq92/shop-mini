@@ -24,8 +24,8 @@ function IndexPage() {
   const [bannerList, setBannerList] = useState<string[]>([]);
 
   useEffect(() => {
-    SpuController.page({ pageNum: 1, pageSize: 10 }).then((page) => {
-      setSpuList(page.records);
+    SpuController.list().then((res) => {
+      setSpuList(res);
     });
     setBannerList(list);
   }, []);
