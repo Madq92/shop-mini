@@ -4,12 +4,12 @@ import { SpuDTO } from "../api/SpuController";
 import "./goods-item.scss";
 import Price from "./price";
 
-export default function GoodsItem({ goods }: { goods: SpuDTO }) {
+export default function GoodsItem({ goods, onClick }: { goods: SpuDTO; onClick?: () => void }) {
   return (
-    <View className="goodsItem">
+    <View className="goodsItem" onClick={onClick}>
       <Image className="img" src={goods.imgUrlList[0]} mode="aspectFill" width={"100%"} height={"150px"} radius={"4px"} />
       <View className={"title"}>{goods.name}</View>
-      <Price price={goods.skus[0].sellPrice} unit={goods.weightFlag === "Y" ? goods.weightUnitName :goods.unitName}/>
+      <Price price={goods.skus[0].sellPrice} unit={goods.weightFlag === "Y" ? goods.weightUnitName : goods.unitName} />
     </View>
   );
 }

@@ -2,7 +2,7 @@ import "./index.scss";
 import Taro from "@tarojs/taro";
 import type CustomTabBarComponent from "../../custom-tab-bar";
 import { useEffect, useMemo, useState } from "react";
-import {  SideBar } from "@nutui/nutui-react-taro";
+import { SideBar } from "@nutui/nutui-react-taro";
 import CategoryController, { CategoryDTO } from "../../api/CategoryController";
 import SpuController, { SpuDTO } from "../../api/SpuController";
 import { View } from "@tarojs/components";
@@ -49,6 +49,12 @@ function Index() {
 
   const [value, setValue] = useState<string>();
 
+  function navigateToGoodsDetail(spuId: string) {
+    Taro.navigateTo({
+      url: `/pages/goods-detail/index?spuId=${spuId}`,
+    });
+  }
+
   return (
     <>
       <SideBar
@@ -60,7 +66,7 @@ function Index() {
         {categoryList?.map((item) => (
           <SideBar.Item key={item.categoryId} title={item.name}>
             <View className={"goodsList"}>
-              {groupedSpu && groupedSpu[item.categoryId]?.map((spu) => <GoodsItemRow goods={spu} key={spu.spuId}/>)}
+              {groupedSpu && groupedSpu[item.categoryId]?.map((spu) => <GoodsItemRow goods={spu} key={spu.spuId} onClick={() => navigateToGoodsDetail(spu.spuId)} />)}
             </View>
             {/*<Price price={123} size={"normal"} />*/}
           </SideBar.Item>

@@ -2,7 +2,7 @@ import Taro from "@tarojs/taro";
 import { TOKEN_KEY, TOKEN_VALUE } from "../../utils/constants";
 import LoginApi from "../LoginController";
 
-const baseUrlPrefix = "http://localhost:8080"
+const baseUrlPrefix = "https://shop-api.oldhorse.tech:1443"
 const env = process.env.NODE_ENV === "development" ? "development" : "production";
 console.log("编译环境：", env, baseUrlPrefix);
 

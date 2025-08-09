@@ -4,7 +4,7 @@ import { SpuDTO } from "../api/SpuController";
 import "./goods-item-row.scss";
 import Price from "./price";
 
-export default function GoodsItemRow({ goods }: { goods: SpuDTO }) {
+export default function GoodsItemRow({ goods ,onClick}: { goods: SpuDTO ,onClick?: () => void  }) {
   const imgUrl = goods.imgUrlList[0];
 
   const price = goods.skus?.length > 0
@@ -12,7 +12,7 @@ export default function GoodsItemRow({ goods }: { goods: SpuDTO }) {
     : 0;
 
   return (
-    <View className="goodsItem">
+    <View className="goodsItem" onClick={onClick}>
       <View className="left">
         <Image className="img" src={imgUrl} mode="aspectFill" width={"100%"} radius={"4px"} />
       </View>

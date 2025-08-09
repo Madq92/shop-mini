@@ -26,7 +26,7 @@ export default class CustomTabBarComponent extends Component {
   render() {
     return (
       <>
-        <Tabbar fixed value={this.state.selected} onSwitch={(index) => this.switchTab(index)}>
+        <Tabbar className={"tabbar"} fixed value={this.state.selected} onSwitch={(index) => this.switchTab(index)}>
           <Tabbar.Item title="首页" icon={<Home />} />
           <Tabbar.Item title="分类" icon={<Category />} />
           <Tabbar.Item title="购物车" icon={<Cart />} />
