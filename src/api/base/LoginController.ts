@@ -2,6 +2,7 @@ import Taro from "@tarojs/taro";
 
 export interface WxLoginRequest {
   code: string;
+  appId: string;
 }
 
 export interface WxLoginResponse {
@@ -9,6 +10,8 @@ export interface WxLoginResponse {
   tokenValue?: string;
   /** 凭证名 */
   tokenName?: string;
+
+  // customer? :CustomerDTO;
 }
 
 namespace LoginController {
@@ -19,7 +22,7 @@ namespace LoginController {
     const option = {
       isShowLoading: false,
       loadingText: "正在加载",
-      url: BASE_URL_PREFIX + "c/login/wx",
+      url: process.env.TARO_APP_BASE_URL + "/mini/login/wxcode",
       data: req,
       method: "POST",
       header: header,

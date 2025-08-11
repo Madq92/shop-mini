@@ -1,10 +1,11 @@
 import Taro from "@tarojs/taro";
 import { TOKEN_KEY, TOKEN_VALUE } from "../../utils/constants";
-import LoginApi from "../LoginController";
+import LoginApi from "./LoginController";
 
-const baseUrlPrefix = "https://shop-api.oldhorse.tech:1443"
+const baseUrlPrefix = process.env.TARO_APP_BASE_URL
+const appId = process.env.TARO_APP_ID
 const env = process.env.NODE_ENV === "development" ? "development" : "production";
-console.log("编译环境：", env, baseUrlPrefix);
+console.log("编译环境：", env, baseUrlPrefix,appId);
 
 const api = {
   baseUrl: baseUrlPrefix,
@@ -74,7 +75,7 @@ const api = {
       const wxLoginRes = await Taro.login();
       console.log("wxLogin:", wxLoginRes);
       // appLogin
-      const resData = await LoginApi.login({ code: wxLoginRes.code });
+      const resData = await LoginApi.login({ code: wxLoginRes.code ,appId: appId});
       console.log("appLogin", resData);
       if (resData) {
         Taro.setStorageSync(TOKEN_KEY, resData.tokenName);
@@ -82,7 +83,7 @@ const api = {
 
         // 重新发起请求
         params.retries = params.retries ? 1 : params.retries + 1;
-        return await this.baseOptions(params, method);
+        return await this.baseRequest(params, method);
       }
     } else  {
       console.error("Request error", result.data);
