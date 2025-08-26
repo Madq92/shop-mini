@@ -56,7 +56,14 @@ function IndexPage() {
       </View>
       <View className="goodsList">
         {spuList?.map((spu) => (
-          <GoodsItem goods={spu} key={spu.spuId} onClick={() => navigateToGoodsDetail(spu.spuId)} />
+          <GoodsItem
+            goods={spu}
+            key={spu.spuId}
+            onClick={() => navigateToGoodsDetail(spu.spuId)}
+            addToCart={(skuId) => {
+              console.log("add to cart:", skuId);
+            }}
+          />
         ))}
       </View>
     </>

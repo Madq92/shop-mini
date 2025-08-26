@@ -17,4 +17,12 @@
     word-wrap: break-word;
     word-break: break-all;
   }
+
+  .desc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 12px;
+  }
 }

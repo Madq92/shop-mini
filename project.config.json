@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "shop-mini",
   "description": "wx mini program",
-  "appid": "touristappid",
+  "appid": "wxc12b85736eae86cb",
   "setting": {
     "urlCheck": true,
     "es6": true,
@@ -16,10 +16,25 @@
     "coverView": true,
     "showShadowRootInWxmlPanel": false,
     "scopeDataCheck": false,
-    "useCompilerModule": false
+    "useCompilerModule": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
   },
   "compileType": "miniprogram",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
-  "condition": {}
+  "condition": {},
+  "libVersion": "3.9.2",
+  "srcMiniprogramRoot": "dist/",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
 }
