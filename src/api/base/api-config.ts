@@ -69,7 +69,7 @@ const api = {
       console.error("正在重新登录");
 
       // 跳转手机登录页面
-      Taro.navigateTo({ url: "/pages/login/index" });
+      // Taro.navigateTo({ url: "/pages/login/index" });
 
       // wxLogin
       const wxLoginRes = await Taro.login();
